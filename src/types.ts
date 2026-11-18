@@ -17,6 +17,8 @@ export interface Game {
   rules_summary: string;
   image: string;
   tags: string[];
+  coffee_pairing?: string;
+  pro_tip?: string;
 }
 
 export interface Category {

@@ -4,7 +4,7 @@ import base64
 import time
 import requests
 
-API_KEY = "AIzaSyAmxiITvbiZA0ObuXMJnoZ1JmPIR_gFIfQ"
+API_KEY = os.getenv("GEMINI_API_KEY", "")
 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={API_KEY}"
 
 image_dir = 'Image'

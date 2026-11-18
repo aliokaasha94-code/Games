@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { X, Users, Clock, ShieldCheck, Share2, ExternalLink, Sparkles, BookOpen, Trophy } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { X, Users, Clock, ShieldCheck, Share2, Sparkles, BookOpen, Coffee, MessageCircle, Building2, Check, Award } from 'lucide-react';
 import { Game } from '../types';
 
 interface GameDetailModalProps {
@@ -8,6 +8,10 @@ interface GameDetailModalProps {
 }
 
 export const GameDetailModal: React.FC<GameDetailModalProps> = ({ game, onClose }) => {
+  const [activeTab, setActiveTab] = useState<'rules' | 'coffee' | 'tips'>('rules');
+  const [tableNumber, setTableNumber] = useState('');
+  const [isCopied, setIsCopied] = useState(false);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -15,6 +19,9 @@ export const GameDetailModal: React.FC<GameDetailModalProps> = ({ game, onClose 
     if (game) {
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
+      setActiveTab('rules');
+      setTableNumber('');
+      setIsCopied(false);
     }
     return () => {
       document.body.style.overflow = 'auto';
@@ -33,8 +40,17 @@ export const GameDetailModal: React.FC<GameDetailModalProps> = ({ game, onClose 
       }).catch(() => {});
     } else {
       navigator.clipboard.writeText(window.location.href);
-      alert('تم نسخ رابط اللعبة بنجاح!');
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
     }
+  };
+
+  const handleOrderToTable = () => {
+    const table = tableNumber.trim() || 'داخل الكافيه';
+    const text = encodeURIComponent(
+      `مساء الخير يا عماد أفندي! ☕🎲\nحابين نطلب لعبة "${game.name}" على طاولة رقم (${table}).\nشكراً ليكم!`
+    );
+    window.open(`https://wa.me/201034031919?text=${text}`, '_blank');
   };
 
   return (
@@ -44,144 +60,201 @@ export const GameDetailModal: React.FC<GameDetailModalProps> = ({ game, onClose 
       <div className="absolute inset-0" onClick={onClose}></div>
 
       {/* Modal Container */}
-      <div className="relative w-full sm:max-w-2xl max-h-[90vh] sm:max-h-[85vh] bg-[#121214] border-t sm:border border-gold/40 rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col z-10 animate-slide-up">
+      <div className="relative w-full sm:max-w-2xl max-h-[92vh] sm:max-h-[88vh] bg-[#14100D] border-t sm:border border-gold/40 rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col z-10 animate-slide-up">
         
-        {/* Top Header / Close Bar */}
-        <div className="relative h-48 sm:h-56 w-full bg-[#1A1612] flex items-center justify-center overflow-hidden border-b border-gold/20 flex-shrink-0">
-          <img 
-            src={game.image} 
-            alt={game.name}
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#121214] via-[#121214]/60 to-transparent"></div>
-
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 left-4 p-2 rounded-full bg-[#0B0B0C]/80 text-neutral-300 hover:text-white border border-white/10 hover:border-gold transition-colors backdrop-blur-md"
-          >
-            <X className="w-5 h-5" />
-          </button>
-
-          {/* Share Button */}
-          <button
-            onClick={handleShare}
-            className="absolute top-4 right-4 p-2 rounded-full bg-[#0B0B0C]/80 text-gold-light hover:text-white border border-gold/30 hover:border-gold transition-colors backdrop-blur-md"
-            title="مشاركة اللعبة"
-          >
-            <Share2 className="w-5 h-5" />
-          </button>
-
-          {/* Header Title inside banner */}
-          <div className="absolute bottom-4 right-5 left-5 text-right">
-            <span className="inline-block text-xs font-bold text-gold-light bg-gold/15 border border-gold/30 px-3 py-0.5 rounded-full mb-1">
-              {game.category_ar} • {game.publisher}
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold font-kufi text-white">
-              {game.name}
-            </h2>
-            <p className="text-xs sm:text-sm text-gold/90 font-medium">
-              {game.tagline}
-            </p>
-          </div>
-        </div>
-
-        {/* Scrollable Content Body */}
-        <div className="p-5 sm:p-6 overflow-y-auto space-y-5 text-right flex-1">
+        {/* Top Product Showcase Bar */}
+        <div className="relative p-5 bg-gradient-to-b from-[#1E1813] to-[#120E0C] border-b border-gold/20 flex flex-col sm:flex-row items-center gap-5 flex-shrink-0">
           
-          {/* Key Specs Matrix */}
-          <div className="grid grid-cols-3 gap-2.5 bg-[#0B0B0C] p-3.5 rounded-2xl border border-gold/15 text-center">
-            <div className="flex flex-col items-center justify-center">
-              <span className="text-xs text-neutral-400 mb-0.5 flex items-center gap-1">
-                <Users className="w-3.5 h-3.5 text-gold" />
-                اللاعبين
+          {/* 1:1 Clean Studio Product Pedestal */}
+          <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-2xl bg-white p-2.5 flex items-center justify-center shadow-lg border border-gold/30 flex-shrink-0">
+            <img 
+              src={game.image} 
+              alt={game.name}
+              className="w-full h-full object-contain drop-shadow"
+            />
+          </div>
+
+          {/* Header Info */}
+          <div className="flex-1 text-center sm:text-right">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-1.5">
+              <span className="text-xs font-bold bg-gold/15 text-gold border border-gold/30 px-2.5 py-0.5 rounded-full">
+                {game.category_ar}
               </span>
-              <span className="text-sm font-bold text-white font-kufi">
-                {game.min_players} - {game.max_players} أفراد
+              <span className="text-xs font-bold bg-black/60 text-neutral-300 border border-neutral-700 px-2 py-0.5 rounded-md">
+                {game.age_rating}
               </span>
+              {game.publisher && (
+                <span className="flex items-center gap-1 text-[11px] text-neutral-400">
+                  <Building2 className="w-3 h-3 text-gold" />
+                  {game.publisher}
+                </span>
+              )}
             </div>
 
-            <div className="flex flex-col items-center justify-center border-x border-white/10">
-              <span className="text-xs text-neutral-400 mb-0.5 flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5 text-gold" />
-                المدة
+            <h2 className="text-xl sm:text-2xl font-bold font-kufi text-white mb-1">
+              {game.name}
+            </h2>
+            <p className="text-xs sm:text-sm text-gold-light/90 font-medium mb-2">
+              {game.tagline}
+            </p>
+
+            {/* Quick Specs */}
+            <div className="inline-flex items-center gap-4 text-xs text-neutral-300 bg-[#0B0B0C]/80 px-3 py-1.5 rounded-xl border border-gold/15">
+              <span className="flex items-center gap-1">
+                <Users className="w-3.5 h-3.5 text-gold" />
+                {game.min_players} - {game.max_players} لاعبين
               </span>
-              <span className="text-sm font-bold text-white font-kufi">
+              <span className="flex items-center gap-1">
+                <Clock className="w-3.5 h-3.5 text-gold" />
                 {game.duration_mins}
               </span>
             </div>
+          </div>
 
-            <div className="flex flex-col items-center justify-center">
-              <span className="text-xs text-neutral-400 mb-0.5 flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-gold" />
-                السن والصعوبة
-              </span>
-              <span className="text-sm font-bold text-white font-kufi">
-                {game.age_rating} • {game.difficulty}
-              </span>
+          {/* Close & Share Buttons */}
+          <div className="absolute top-4 left-4 flex items-center gap-2">
+            <button
+              onClick={handleShare}
+              className="p-2 rounded-full bg-black/60 text-neutral-300 hover:text-gold hover:bg-black/90 border border-gold/20 transition-all"
+              title="مشاركة اللعبة"
+            >
+              {isCopied ? <Check className="w-4 h-4 text-emerald-400" /> : <Share2 className="w-4 h-4" />}
+            </button>
+            <button
+              onClick={onClose}
+              className="p-2 rounded-full bg-black/60 text-neutral-300 hover:text-white hover:bg-black/90 border border-gold/20 transition-all"
+              title="إغلاق"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Navigation Tabs */}
+        <div className="flex border-b border-gold/20 bg-[#0E0A08] px-4 pt-2 gap-2 flex-shrink-0">
+          <button
+            onClick={() => setActiveTab('rules')}
+            className={`flex items-center gap-2 py-2.5 px-4 text-xs sm:text-sm font-bold border-b-2 transition-all ${
+              activeTab === 'rules'
+                ? 'border-gold text-gold'
+                : 'border-transparent text-neutral-400 hover:text-neutral-200'
+            }`}
+          >
+            <BookOpen className="w-4 h-4" />
+            <span>القوانين وطريقة اللعب</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('coffee')}
+            className={`flex items-center gap-2 py-2.5 px-4 text-xs sm:text-sm font-bold border-b-2 transition-all ${
+              activeTab === 'coffee'
+                ? 'border-gold text-gold'
+                : 'border-transparent text-neutral-400 hover:text-neutral-200'
+            }`}
+          >
+            <Coffee className="w-4 h-4" />
+            <span>المشروب المقترح</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('tips')}
+            className={`flex items-center gap-2 py-2.5 px-4 text-xs sm:text-sm font-bold border-b-2 transition-all ${
+              activeTab === 'tips'
+                ? 'border-gold text-gold'
+                : 'border-transparent text-neutral-400 hover:text-neutral-200'
+            }`}
+          >
+            <Award className="w-4 h-4" />
+            <span>نصائح الفوز</span>
+          </button>
+        </div>
+
+        {/* Scrollable Tab Content */}
+        <div className="p-5 sm:p-6 overflow-y-auto flex-1 space-y-4 text-neutral-200 text-sm leading-relaxed">
+          
+          {activeTab === 'rules' && (
+            <div className="space-y-4 animate-fade-in">
+              <div>
+                <h4 className="text-gold font-bold font-kufi text-base mb-1.5 flex items-center gap-2">
+                  <Sparkles className="w-4 h-4" />
+                  نبذة عن اللعبة
+                </h4>
+                <p className="text-neutral-300 leading-relaxed bg-[#0B0B0C]/60 p-3.5 rounded-xl border border-white/5">
+                  {game.description}
+                </p>
+              </div>
+
+              {game.how_to_play && (
+                <div>
+                  <h4 className="text-gold font-bold font-kufi text-base mb-2">
+                    🎯 كيف تبدأ اللعب؟
+                  </h4>
+                  <div className="bg-[#0B0B0C]/60 p-4 rounded-xl border border-white/5 space-y-2">
+                    {Array.isArray(game.how_to_play) ? (
+                      <ol className="list-decimal list-inside space-y-2">
+                        {game.how_to_play.map((step, idx) => (
+                          <li key={idx} className="text-neutral-300">{step}</li>
+                        ))}
+                      </ol>
+                    ) : (
+                      <p className="text-neutral-300 whitespace-pre-line">{game.how_to_play}</p>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
+          )}
 
-          {/* Description */}
-          <div>
-            <h4 className="text-xs font-bold text-neutral-400 uppercase tracking-wider mb-1.5">
-              عن اللعبة
-            </h4>
-            <p className="text-sm text-neutral-200 leading-relaxed bg-[#1A1612]/50 p-3.5 rounded-xl border border-gold/10">
-              {game.description}
-            </p>
-          </div>
-
-          {/* How to Play Section */}
-          <div>
-            <h4 className="text-sm font-bold text-gold flex items-center gap-2 mb-2 font-kufi">
-              <BookOpen className="w-4 h-4" />
-              طريقة اللعب خطوة بخطوة
-            </h4>
-            <div className="bg-[#0B0B0C] p-4 rounded-2xl border border-gold/20 text-xs sm:text-sm text-neutral-200 leading-loose whitespace-pre-line">
-              {game.how_to_play}
+          {activeTab === 'coffee' && (
+            <div className="bg-gradient-to-br from-[#1C1612] to-[#120E0C] p-5 rounded-2xl border border-gold/30 text-center space-y-3 animate-fade-in">
+              <div className="w-12 h-12 rounded-full bg-gold/15 text-gold flex items-center justify-center mx-auto shadow-gold-glow">
+                <Coffee className="w-6 h-6" />
+              </div>
+              <h4 className="text-lg font-bold font-kufi text-white">
+                توليفة القهوة المثالية لهذه اللعبة ☕
+              </h4>
+              <p className="text-gold-light font-medium text-sm">
+                {game.coffee_pairing || 'فلات وايت بالبن الإثيوبي المختص أو سبانش لاتيه بارد'}
+              </p>
+              <p className="text-xs text-neutral-400 max-w-md mx-auto">
+                في عماد أفندي، بنختار لكل لعبة مشروب يضبط تركيزك أو يزود روقانك مع أصحابك على الطاولة.
+              </p>
             </div>
-          </div>
+          )}
 
-          {/* Rules and Victory Summary */}
-          <div>
-            <h4 className="text-sm font-bold text-amber-400 flex items-center gap-2 mb-2 font-kufi">
-              <Trophy className="w-4 h-4" />
-              قوانين الفوز والعقوبات
-            </h4>
-            <div className="bg-amber-950/20 border border-amber-500/30 p-3.5 rounded-xl text-xs sm:text-sm text-amber-200/90 leading-relaxed">
-              {game.rules_summary}
+          {activeTab === 'tips' && (
+            <div className="bg-[#0B0B0C]/70 p-5 rounded-2xl border border-gold/20 space-y-3 animate-fade-in">
+              <h4 className="text-gold font-bold font-kufi text-base flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-gold" />
+                سر الفوز وإشعال الجلسة 🔥
+              </h4>
+              <p className="text-neutral-300 leading-relaxed">
+                {game.pro_tip || 'ركز في لغة جسد اللي قدامك، العب بهدوء ومتكشفش أوراقك بدري، واستغل اللحظة الصح للمفاجأة!'}
+              </p>
             </div>
-          </div>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-1.5 pt-1">
-            {game.tags.map((tag) => (
-              <span key={tag} className="text-[11px] bg-[#1A1612] text-neutral-300 border border-white/5 px-2.5 py-1 rounded-lg">
-                #{tag}
-              </span>
-            ))}
-          </div>
+          )}
 
         </div>
 
-        {/* Footer Action Bar */}
-        <div className="p-4 bg-[#0B0B0C] border-t border-gold/20 flex items-center justify-between gap-3 flex-shrink-0">
-          <a
-            href={game.publisher_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs text-neutral-400 hover:text-gold transition-colors"
-          >
-            <span>موقع الشركة الأصلية</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
+        {/* Table Request Action Footer (Cafe Operations Flywheel) */}
+        <div className="p-4 bg-[#0B0B0C] border-t border-gold/25 flex flex-col sm:flex-row items-center gap-3 flex-shrink-0">
+          <div className="w-full sm:w-44 flex items-center bg-[#1A1410] border border-gold/30 rounded-xl px-3 py-2 text-xs">
+            <span className="text-neutral-400 whitespace-nowrap ml-2">طاولة رقم:</span>
+            <input 
+              type="text" 
+              placeholder="مثال: 5" 
+              value={tableNumber}
+              onChange={(e) => setTableNumber(e.target.value)}
+              className="w-full bg-transparent text-white focus:outline-none font-bold"
+            />
+          </div>
 
           <button
-            onClick={onClose}
-            className="flex-1 max-w-[200px] py-2.5 px-4 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-[#0B0B0C] font-bold text-sm rounded-xl shadow-gold-glow transition-all active:scale-95"
+            onClick={handleOrderToTable}
+            className="w-full sm:flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-gradient-to-r from-gold to-gold-dark hover:from-gold-light hover:to-gold text-[#0B0B0C] font-extrabold rounded-xl text-sm shadow-gold-glow transition-all active:scale-95 duration-200"
           >
-            فهمت، جاهزين نلعب!
+            <MessageCircle className="w-4 h-4 fill-current" />
+            <span>طلب استعارة اللعبة على طاولتي فوراً</span>
           </button>
         </div>
 

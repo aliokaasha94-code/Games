@@ -3,7 +3,7 @@ import json
 import base64
 import requests
 
-API_KEY = "AIzaSyAmxiITvbiZA0ObuXMJnoZ1JmPIR_gFIfQ"
+API_KEY = os.getenv("GEMINI_API_KEY", "")
 url = f"https://generativelanguage.googleapis.com/v1beta/models?key={API_KEY}"
 
 try:

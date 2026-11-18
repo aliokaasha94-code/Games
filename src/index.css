@@ -12,35 +12,71 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0B0C;
+  background: #0B0807;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.35);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(212, 175, 55, 0.6);
+  background: rgba(212, 175, 55, 0.7);
 }
 
 /* Glassmorphism Classes */
 .glass-panel {
-  background: rgba(18, 18, 20, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.18);
+  background: rgba(18, 14, 12, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .glass-panel-hover {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-panel-hover:hover {
-  background: rgba(26, 22, 18, 0.85);
-  border-color: rgba(212, 175, 55, 0.45);
-  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.2);
+  background: rgba(26, 20, 16, 0.9);
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.3);
 }
 
-/* Mobile Overscroll Lock */
+/* Hide scrollbars for chips and tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Mobile Touch & Typography Polish */
 html, body {
   overscroll-behavior-x: none;
   -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
