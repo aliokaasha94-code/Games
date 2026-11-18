@@ -25,15 +25,20 @@ export const App: React.FC = () => {
         return false;
       }
 
-      // 2. Player count filter
+      // 2. Player count filter (Smart Range inclusive)
       if (selectedPlayerCount !== null) {
         if (selectedPlayerCount === 8) {
           // Large party 8+
           if (game.max_players < 8) return false;
-        } else {
-          if (game.min_players > selectedPlayerCount || game.max_players < selectedPlayerCount) {
-            return false;
-          }
+        } else if (selectedPlayerCount === 2) {
+          // 2 players
+          if (game.min_players > 2 || game.max_players < 2) return false;
+        } else if (selectedPlayerCount === 4) {
+          // Range 3 - 4 players
+          if (game.max_players < 3 || game.min_players > 4) return false;
+        } else if (selectedPlayerCount === 6) {
+          // Range 5 - 6 players
+          if (game.max_players < 5 || game.min_players > 6) return false;
         }
       }
 

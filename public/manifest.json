@@ -1,0 +1,25 @@
+{
+  "name": "ألعاب كافيه عماد أفندي",
+  "short_name": "عماد أفندي",
+  "description": "الدليل التفاعلي الكامل لألعاب الطاولة والكروت في كافيه ومحمصة عماد أفندي بكفر الشيخ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0B0C",
+  "theme_color": "#D4AF37",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
