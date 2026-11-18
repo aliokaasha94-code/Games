@@ -22,3 +22,10 @@ dist/
 catalog_dump.json
 .DS_Store
 Thumbs.db
+
+# Scratch and temp download dumps
+downloads_official/
+scratch/
+audit_images_visual.py
+check_mansa_net.py
+download_real_mansa.py
