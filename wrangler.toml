@@ -6,12 +6,7 @@ pages_build_output_dir = "dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "emad-afandi-games-db"
-database_id = "00000000-0000-0000-0000-000000000000" # Replace with your D1 DB UUID
-
-# Cloudflare R2 Bucket binding
-[[r2_buckets]]
-binding = "ASSETS_BUCKET"
-bucket_name = "emad-afandi-assets"
+database_id = "046a76ed-8537-4309-be8e-dfa039b4fe73"
 
 [vars]
 ENVIRONMENT = "production"
