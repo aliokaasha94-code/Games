@@ -1,0 +1,509 @@
+{
+  "WhatsApp Image 2026-11-17 at 12.34.25 AM (1).jpeg": [
+    {
+      "name_ar": "Girls ولكن",
+      "name_en": "Girls Walaken (Girls but...)",
+      "box_2d": [
+        336,
+        68,
+        611,
+        226
+      ],
+      "description": "Rectangular pink box with 'Girls ولكن' in a handwritten-style font (light pink on dark pink). Features a 'Joksy Joy' logo in white. The box appears slightly worn."
+    },
+    {
+      "name_ar": "العلاقات أعمق دائمًا",
+      "name_en": "Deep Couples",
+      "box_2d": [
+        346,
+        212,
+        584,
+        321
+      ],
+      "description": "Small black box with 'DEEP COUPLES' in white. Below it, a white heart with a question mark and two clinking champagne glasses. Small Arabic text 'العلاقات أعمق دائمًا' (Relationships are always deeper) is visible. 'Joksy Joy' logo at the bottom."
+    },
+    {
+      "name_ar": "COUPLES ولكن السرير / حب من نوع مختلف",
+      "name_en": "Couples Walaken Al-Sarir (Couples but the bed) / Hubb Min Naw' Mukhtalif (Love of a different kind)",
+      "box_2d": [
+        339,
+        311,
+        582,
+        471
+      ],
+      "description": "Horizontal box, divided into black (top) and red (bottom) sections. Top section has 'COUPLES ولكن السرير' in white. Bottom section has 'حب من نوع مختلف' in white and a cartoon illustration of a smiling couple in bed. 'Joksy Joy' logo."
+    },
+    {
+      "name_ar": "GİRLS ولكن",
+      "name_en": "Girls Walaken (Girls but...)",
+      "box_2d": [
+        345,
+        469,
+        608,
+        549
+      ],
+      "description": "Tall, vertical red box. 'GİRLS' in multi-colored (pink, yellow, blue) letters and 'ولكن' in white Arabic script. Decorated with colorful splashes and abstract shapes. 'Joksy Joy' logo at the bottom."
+    },
+    {
+      "name_ar": "Pick A Date / حب من نوع مختلف",
+      "name_en": "Pick A Date / Hubb Min Naw' Mukhtalif (Love of a different kind)",
+      "box_2d": [
+        352,
+        547,
+        580,
+        649
+      ],
+      "description": "Small red box with 'Pick A Date' in white text on top. Features a cartoon illustration of a boy and girl with a heart between them. 'حب من نوع مختلف' in white Arabic text is also visible. 'Joksy Joy' logo."
+    },
+    {
+      "name_ar": "مراحك / تعرف تأكل بعظمها حلاوة؟ / عيش التجربة / حركات",
+      "name_en": "Marahak (Your fun/stages) / Ta'rif Ta'kul Bi'adhmha Halawa? (Do you know how to eat its sweetness with its bones?) / Live the Experience / Moves",
+      "box_2d": [
+        345,
+        647,
+        610,
+        843
+      ],
+      "description": "Large green box with stylized purple and yellow liquid splashes. The main graphic is a stack of cartoon characters: two heads on top of a body, one with an exposed brain. 'مراحك' is prominently displayed in large white Arabic text. Smaller Arabic phrases include 'تعرف تأكل بعظمها حلاوة؟', 'عيش التجربة', and 'حركات'."
+    },
+    {
+      "name_ar": "ولد النار / اختبر خفي قدراتك",
+      "name_en": "Walad Al-Nar (Son of Fire/Fire Boy) / Ikhtabar Khafi Qudratak (Test your hidden abilities)",
+      "box_2d": [
+        360,
+        831,
+        585,
+        937
+      ],
+      "description": "Orange box featuring a stylized flame graphic and a black silhouette of a figure. 'ولد النار' is written in white Arabic text, with smaller text 'اختبر خفي قدراتك' also visible."
+    },
+    {
+      "name_ar": "(Not visible)",
+      "name_en": "UNO",
+      "box_2d": [
+        836,
+        868,
+        935,
+        966
+      ],
+      "description": "A standard UNO card game box, predominantly blue with the iconic red and yellow 'UNO' logo clearly visible."
+    }
+  ],
+  "WhatsApp Image 2026-11-17 at 12.34.25 AM.jpeg": [
+    {
+      "name_ar": "قول أميم الجزء الثاني",
+      "name_en": "Qul Omim - Part Two",
+      "box_2d": [
+        0,
+        0,
+        422,
+        245
+      ],
+      "description": "Light blue box with a white cat wearing a white knitted hat and sunglasses, a red speech bubble with 'قول أميم', and 'الجزء الثاني' on a light blue oval."
+    },
+    {
+      "name_ar": "كلام X كلام",
+      "name_en": "Kalam X Kalam",
+      "box_2d": [
+        277,
+        113,
+        421,
+        245
+      ],
+      "description": "Orange and teal card game box featuring a stylized yellow-skinned character with blue hair and a mustache holding playing cards. 'Nilko' logo is visible."
+    },
+    {
+      "name_ar": "لا ألعاب حتى تستمتع بحرية",
+      "name_en": "Shake Me!",
+      "box_2d": [
+        126,
+        240,
+        418,
+        378
+      ],
+      "description": "Light blue cube-shaped box with 'SHAKE ME!' in yellow text, accompanied by red and yellow abstract wave/lightning shapes. 'Jokey & Joy' logo is visible."
+    },
+    {
+      "name_ar": "قول أو إعمل إكستريم",
+      "name_en": "Qul aw E'mel Extreme",
+      "box_2d": [
+        132,
+        368,
+        423,
+        521
+      ],
+      "description": "Black box with a prominent yellow and red speech bubble containing 'قول أو إعمل' (Say or Do) and 'إكستريم' (Extreme) below it. A tagline is visible at the top."
+    }
+  ],
+  "WhatsApp Image 2026-11-17 at 12.34.26 AM.jpeg": [
+    {
+      "name_ar": "Girls ولكن",
+      "name_en": "Girls Walakin (Girls but...)",
+      "box_2d": [
+        396,
+        0,
+        639,
+        148
+      ],
+      "description": "Light pink and white box with 'Girls' in orange glittery font and 'ولكن' in black. Includes the 'JOKEY JOY' logo at the bottom."
+    },
+    {
+      "name_ar": "DEEP",
+      "name_en": "DEEP",
+      "box_2d": [
+        451,
+        179,
+        639,
+        297
+      ],
+      "description": "Black box with white text 'DEEP', a graphic of two cheering glasses and a heart, and the 'JOKEY JOY' logo."
+    },
+    {
+      "name_ar": "COUPLES ولكن - حب من نوع مختلف",
+      "name_en": "Couples Walakin (Couples but...) - Love of a Different Kind",
+      "box_2d": [
+        418,
+        327,
+        637,
+        476
+      ],
+      "description": "Black and red gradient box with 'COUPLES' and 'ولكن' in white. Features a red heart with a lock and key design, and text 'حب من نوع مختلف' (Love of a different kind)."
+    },
+    {
+      "name_ar": "Girls ولكن SUMMER",
+      "name_en": "Girls Walakin Summer (Girls but... Summer)",
+      "box_2d": [
+        423,
+        481,
+        643,
+        549
+      ],
+      "description": "Tall, narrow pink and red gradient box with white splashes. 'Girls' in white, 'ولكن' in pink, and 'SUMMER' in English. Includes the 'JOKEY JOY' logo."
+    },
+    {
+      "name_ar": "Pick A Date",
+      "name_en": "Pick A Date",
+      "box_2d": [
+        429,
+        567,
+        635,
+        693
+      ],
+      "description": "Red box with 'Pick A Date' title. Features two anime-style cartoon figures with hearts and Arabic text 'جربوا تاريخ مستوى السعادة!' (Try the happiness level date!) and 'يحتوي على مستويات مختلفة' (Contains different levels). Includes the 'JOKEY JOY' logo."
+    },
+    {
+      "name_ar": "كم دماغك - تعرف تاكل وتعليهم حلاوة؟",
+      "name_en": "Kam Demaghak (How much is your brain?) - Do you know how to eat and sweeten them?",
+      "box_2d": [
+        420,
+        706,
+        641,
+        828
+      ],
+      "description": "Green and purple swirly background box with a cartoon character holding a spoon to a brain on its head. Title 'كم دماغك' in large green font."
+    },
+    {
+      "name_ar": "إختبار العقلي - الذكاء",
+      "name_en": "Ekhbar Al-Aqli - Al-Thaka'a (Mental Test - Intelligence)",
+      "box_2d": [
+        464,
+        844,
+        644,
+        949
+      ],
+      "description": "Orange box with fire graphics. Titles 'إختبار العقلي' (Mental Test) and 'الذكاء' (Intelligence) in white text."
+    }
+  ],
+  "WhatsApp Image 2026-11-17 at 12.35.02 AM.jpeg": [
+    {
+      "name_ar": "مونوبولي بنك الحظ",
+      "name_en": "Monopoly Bank of Luck",
+      "box_2d": [
+        54,
+        0,
+        183,
+        70
+      ],
+      "description": "A partially visible tall box with a black and white checkered pattern, a red 'M' logo, and some blue icons. It shows 'Monopoly' and 'Bank of Luck' in Arabic."
+    },
+    {
+      "name_ar": "تحدي العيلة",
+      "name_en": "Family Challenge",
+      "box_2d": [
+        162,
+        202,
+        248,
+        609
+      ],
+      "description": "A purple box featuring a large yellow banner. The design includes abstract, cartoonish cat-like and alien-like characters. The 'safe®' logo is visible on the top left. Text on the box encourages getting to know your family."
+    },
+    {
+      "name_ar": "فن جوج",
+      "name_en": "Fan Jooj",
+      "box_2d": [
+        159,
+        589,
+        245,
+        1000
+      ],
+      "description": "A rectangular box with a yellow background, a blue top-left corner, and a red right side. It features a white cat wearing sunglasses and a blue beret, holding a pencil. Text on the red part says 'Encourages ugly drawing!'."
+    },
+    {
+      "name_ar": "الركشيف",
+      "name_en": "The Rakeeshef",
+      "box_2d": [
+        236,
+        0,
+        348,
+        238
+      ],
+      "description": "A black box with a red outlined, stitched mouth and red 'x' marks for eyes, giving a spooky or mischievous impression. Red playing cards are visible at the bottom. Text below the mouth refers to 'news about your friends'."
+    },
+    {
+      "name_ar": "البوكر",
+      "name_en": "Poker",
+      "box_2d": [
+        243,
+        127,
+        418,
+        706
+      ],
+      "description": "A box with a vibrant, multi-colored diamond pattern background (pink, green, blue, yellow, red, orange, brown). It features five distinct masks: a green skull, a Guy Fawkes mask, a jester mask, a Salvador Dalí mask, and a male face with glasses. The 'Lucid Dreaming' logo is visible on the bottom right. The Arabic text translates to 'Many families and few faces'."
+    },
+    {
+      "name_ar": "الكور",
+      "name_en": "Al Kour",
+      "box_2d": [
+        254,
+        664,
+        389,
+        1000
+      ],
+      "description": "A bright yellow box with illustrations of a green tuk-tuk on the left, a stack of playing cards, and a stylized character holding cards. The 'nilco' logo is visible. Arabic text at the bottom mentions 'Heroes of Al Kour' with cartoon characters."
+    }
+  ],
+  "WhatsApp Image 2026-11-17 at 12.53.10 AM.jpeg": [
+    {
+      "name_ar": "كارينو",
+      "name_en": "Kartino",
+      "box_2d": [
+        227,
+        534,
+        343,
+        985
+      ],
+      "description": "Red box with 'Kartino' logo, '٣ العاب في لعبة' (3 games in a game) text. Features a slot machine with a face, a die, and a question mark icon. Additional text 'مش سهلة... مش صعبة' (not easy... not hard)."
+    },
+    {
+      "name_ar": "كارينو الاعصاب",
+      "name_en": "Kartino The Nerves",
+      "box_2d": [
+        303,
+        586,
+        438,
+        1000
+      ],
+      "description": "Dark blue box with 'VOL. 2' and 'Kartino' logo. Features a screaming man holding two red cards, with a bell in front of him. Text 'الاعصاب' (The Nerves) and 'جلال بري' (Jalal Burri) as producer."
+    },
+    {
+      "name_ar": "أعور و وشاك",
+      "name_en": "A'wer w Weshak (One-Eyed and Your Face)",
+      "box_2d": [
+        266,
+        334,
+        456,
+        551
+      ],
+      "description": "Light blue box with cartoonish eyes and mouth. Two cartoon hands holding green markers drawing wavy lines. Stars and dots in the background. 'مدني' (Madany) logo on the top right."
+    },
+    {
+      "name_ar": "الحدق الحكاية",
+      "name_en": "El Hadaq The Story",
+      "box_2d": [
+        307,
+        76,
+        466,
+        341
+      ],
+      "description": "Black box with large white Arabic text 'الحدق' (El Hadaq), and 'الحكاية' (The Story) below it. Small text 'اللي يحل حالي' (He who solves my case). Features a white and blue circular design. 'ZAG' logo at the bottom left."
+    },
+    {
+      "name_ar": "نيكست",
+      "name_en": "Next",
+      "box_2d": [
+        120,
+        0,
+        335,
+        155
+      ],
+      "description": "Tall, narrow red box, seen from the side. Features a white stylized 'Next' logo vertically. Cartoon illustrations of a sleeping person and a thinking person."
+    },
+    {
+      "name_ar": "انا مش عارفني وانت؟",
+      "name_en": "Ana Mesh Arefni W Enta? (I Don't Know Myself, And You?)",
+      "box_2d": [
+        458,
+        31,
+        584,
+        500
+      ],
+      "description": "Blue and yellow box. Features a man in a hat with glasses and a woman with a mask-like face, both with abstract cartoon features. Speech bubbles with Arabic text such as 'اقول اية و اسمع اية' (What should I say and what should I hear?)."
+    },
+    {
+      "name_ar": "كارينو",
+      "name_en": "Kartino",
+      "box_2d": [
+        433,
+        514,
+        628,
+        1000
+      ],
+      "description": "Large rectangular box with blue, red, and yellow sections. 'Kartino' logo on the top right. Features a slot machine with game-related icons (character, monster, TV). Green banner with 'محدش بيلعبها بالسهل' (Nobody plays it easily). Red section at the bottom says 'برضو ٢ العاب في لعبة' (Also 2 Games in one). Yellow text 'انت و شطارتك ضحكتي معاك ليس مبادئك'."
+    }
+  ],
+  "WhatsApp Image 2026-11-17 at 12.53.11 AM.jpeg": [
+    {
+      "name_ar": "لعبة الموت",
+      "name_en": "Game of Death",
+      "box_2d": [
+        85,
+        0,
+        412,
+        273
+      ],
+      "description": "Large black and white box with geometric patterns. A red section features white Arabic text 'لعبة الموت' (Game of Death), and 'اوكي' (Okay) on a white section."
+    },
+    {
+      "name_ar": "لعبة الحظ التحدي السريع",
+      "name_en": "Game of Luck: The Fast Challenge",
+      "box_2d": [
+        270,
+        166,
+        513,
+        357
+      ],
+      "description": "Red box featuring a multi-colored spinner, two stick figures, and a speech bubble with a question mark. 'nilco' logo is visible."
+    },
+    {
+      "name_ar": "الحاسبة السابعة",
+      "name_en": "The Seventh Calculator",
+      "box_2d": [
+        290,
+        355,
+        492,
+        432
+      ],
+      "description": "Small red box with prominent white Arabic text 'الحاسبة السابعة' (The Seventh Calculator) and 'CUE' logo."
+    },
+    {
+      "name_ar": "صديق أم محتال",
+      "name_en": "FRIEND OR FRAUD",
+      "box_2d": [
+        294,
+        431,
+        465,
+        608
+      ],
+      "description": "Large light green box with prominent dark green uppercase text 'FRIEND OR FRAUD'."
+    },
+    {
+      "name_ar": "أبطالي",
+      "name_en": "Abtali (My Heroes)",
+      "box_2d": [
+        390,
+        613,
+        560,
+        796
+      ],
+      "description": "Blue box with a cartoon man (beard, open shirt) holding a microphone. Arabic text 'أبطالي' (My Heroes) and 'EYAD ASHRAF' logo."
+    },
+    {
+      "name_ar": null,
+      "name_en": "ap_deep",
+      "box_2d": [
+        396,
+        781,
+        574,
+        995
+      ],
+      "description": "Dark grey box with a stylized orange mouth/lips, a thought bubble, and white text 'ap_deep'. 'ANISA ABEID' logo and text 'English and Arabic playing cards inside'."
+    },
+    {
+      "name_ar": "Girls ولكن",
+      "name_en": "Girls Walakin (Girls But)",
+      "box_2d": [
+        469,
+        428,
+        770,
+        610
+      ],
+      "description": "Black box with 'Girls ولكن' in white and pink. 'JOKEYJOY GAMES' logo, '+17' rating, and 'Arabic | English' text."
+    },
+    {
+      "name_ar": "وراء الجريمة فندق الدم",
+      "name_en": "Behind the Crime: Hotel of Blood",
+      "box_2d": [
+        517,
+        34,
+        762,
+        269
+      ],
+      "description": "Dark box with a red silhouette of a person, a dripping blood effect, and white Arabic text 'وراء الجريمة فندق الدم' (Behind the Crime: Hotel of Blood). 'RAW' logo."
+    },
+    {
+      "name_ar": "اللعبة القاضية",
+      "name_en": "Al-Le'ba Al-Qadhiya (The Decisive Game)",
+      "box_2d": [
+        492,
+        265,
+        762,
+        427
+      ],
+      "description": "Purple box with 'اللعبة القاضية' (The Decisive Game) in yellow text, a magnifying glass icon, and 'mrly' logo. Small text 'ولاد روقة!!!' (Sons of Roo'a!!!) and 'مش هنبطل لعب' (We won't stop playing)."
+    },
+    {
+      "name_ar": "أنت كوميدي",
+      "name_en": "Anta Comedy (You are a Comedian)",
+      "box_2d": [
+        555,
+        608,
+        729,
+        706
+      ],
+      "description": "White box with prominent red and black Arabic text 'أنت كوميدي' (You are a Comedian). Also features 'CARDS GAME - VERSION'."
+    },
+    {
+      "name_ar": "مين هيلعب لوزر؟",
+      "name_en": "Loser",
+      "box_2d": [
+        566,
+        690,
+        747,
+        789
+      ],
+      "description": "Red box with 'LOSER' in a distressed white font, Arabic text 'مين هيلعب' (Who will play) above it, and a small lightning bolt graphic."
+    },
+    {
+      "name_ar": "متورن",
+      "name_en": "Motawren (Evolved)",
+      "box_2d": [
+        576,
+        785,
+        764,
+        893
+      ],
+      "description": "Red box with a cartoon green monster/creature with an open mouth. White Arabic text 'متورن' (Motawren)."
+    },
+    {
+      "name_ar": null,
+      "name_en": "Unidentified Novelty Box",
+      "box_2d": [
+        587,
+        860,
+        770,
+        1000
+      ],
+      "description": "Orange box featuring a cartoon character with a green bandana, mustache, and blue striped shirt. The Arabic name is not clearly legible on the front."
+    }
+  ]
+}

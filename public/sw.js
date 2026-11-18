@@ -1,6 +1,6 @@
 // ☕ كافيه ومحمصة عماد أفندي - Service Worker Offline Engine
 // Generated automatically by sync_game_assets.py
-const CACHE_NAME = 'emad-afandi-v202611181544';
+const CACHE_NAME = 'emad-afandi-v202611181648';
 const ASSETS_TO_CACHE = [
   "/",
   "/index.html",

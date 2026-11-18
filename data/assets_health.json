@@ -1,21 +1,21 @@
 {
   "project": "كافيه ومحمصة عماد أفندي - Emad Afandi Games Hub",
-  "generated_at": "2026-11-18T15:44:54.317179",
+  "generated_at": "2026-11-18T16:48:14.978698",
   "total_games": 44,
   "verified_images_count": 44,
   "missing_images_count": 0,
-  "real_studio_photos_count": 25,
-  "placeholders_count": 19,
-  "total_assets_size_kb": 1190.02,
-  "total_assets_size_mb": 1.16,
-  "average_image_size_kb": 27.05,
+  "real_studio_photos_count": 41,
+  "placeholders_count": 3,
+  "total_assets_size_kb": 1600.15,
+  "total_assets_size_mb": 1.56,
+  "average_image_size_kb": 36.37,
   "all_images_under_100kb": true,
   "aspect_ratio_1_to_1_compliance_pct": 100.0,
   "pwa_offline_readiness": {
     "status": "READY_FOR_OFFLINE",
     "service_worker_file": "/sw.js",
     "total_precached_assets": 48,
-    "estimated_cache_weight_mb": 1.16,
+    "estimated_cache_weight_mb": 1.56,
     "offline_support": "Full Cache-First PWA",
     "mobile_loading_grade": "A+ (Lightning Fast)"
   },
@@ -40,13 +40,13 @@
       "image_path": "/games/el-joker.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.95,
+      "size_kb": 11.59,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "kadab",
@@ -54,13 +54,13 @@
       "image_path": "/games/kadab.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.95,
+      "size_kb": 47.89,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "met7awech",
@@ -82,13 +82,13 @@
       "image_path": "/games/msh-hanbatel.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.95,
+      "size_kb": 33.25,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "wala3a",
@@ -110,13 +110,13 @@
       "image_path": "/games/est7ala.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.68,
+      "size_kb": 26.32,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "byegy-menno",
@@ -180,13 +180,13 @@
       "image_path": "/games/tala3-el-mostakhabby.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.68,
+      "size_kb": 23.69,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "ew3a-weshak",
@@ -194,13 +194,13 @@
       "image_path": "/games/ew3a-weshak.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.68,
+      "size_kb": 45.18,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "hareedy",
@@ -222,13 +222,13 @@
       "image_path": "/games/el-3awz.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.68,
+      "size_kb": 24.85,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "2ool-aw-e3mel",
@@ -250,13 +250,13 @@
       "image_path": "/games/2oolameme-2.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.68,
+      "size_kb": 78.73,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "casino-al3ab-marwan-serry",
@@ -306,13 +306,13 @@
       "image_path": "/games/raz3-el-gomhoor.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 3.25,
+      "size_kb": 15.98,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "couples-walaken",
@@ -390,13 +390,13 @@
       "image_path": "/games/waraa-el-gareema.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 3.64,
+      "size_kb": 21.93,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "khufu",
@@ -422,7 +422,7 @@
       "height": 600,
       "aspect_ratio": "600:600",
       "is_square_1_to_1": true,
-      "size_kb": 78.56,
+      "size_kb": 32.34,
       "under_100kb": true,
       "is_real_studio_photo": true
     },
@@ -446,13 +446,13 @@
       "image_path": "/games/tomouhy.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.96,
+      "size_kb": 23.33,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "skrew-pocket",
@@ -488,13 +488,13 @@
       "image_path": "/games/sahseh.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 3.11,
+      "size_kb": 55.03,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "3arosty",
@@ -502,13 +502,13 @@
       "image_path": "/games/3arosty.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 3.11,
+      "size_kb": 16.06,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "tasali-kelma-fe-serrak",
@@ -586,13 +586,13 @@
       "image_path": "/games/tasali-ramadan.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 3.11,
+      "size_kb": 25.25,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "starting-chess",
@@ -600,13 +600,13 @@
       "image_path": "/games/starting-chess.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.05,
+      "size_kb": 31.03,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     },
     {
       "id": "original-domino",
@@ -614,11 +614,11 @@
       "image_path": "/games/original-domino.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.05,
+      "size_kb": 4.82,
       "under_100kb": true,
       "is_real_studio_photo": false
     },
@@ -628,13 +628,13 @@
       "image_path": "/games/mawsoo3at.webp",
       "file_exists": true,
       "format": "WEBP",
-      "width": 600,
-      "height": 600,
-      "aspect_ratio": "600:600",
+      "width": 800,
+      "height": 800,
+      "aspect_ratio": "800:800",
       "is_square_1_to_1": true,
-      "size_kb": 2.05,
+      "size_kb": 19.0,
       "under_100kb": true,
-      "is_real_studio_photo": false
+      "is_real_studio_photo": true
     }
   ]
 }

@@ -1,0 +1,255 @@
+[
+  {
+    "name_ar": "UNO",
+    "name_en": "UNO",
+    "box_2d": [
+      239,
+      0,
+      366,
+      89
+    ],
+    "description": "Red metal tin box with 'UNO' in white letters."
+  },
+  {
+    "name_ar": "كارتافلام",
+    "name_en": "Karataflam",
+    "box_2d": [
+      355,
+      53,
+      498,
+      149
+    ],
+    "description": "Blue box with 'Karataflam' in white and a stylized face graphic."
+  },
+  {
+    "name_ar": "أرواح",
+    "name_en": "Arwah",
+    "box_2d": [
+      358,
+      156,
+      494,
+      229
+    ],
+    "description": "Blue box with a dark blue graphic of a creature with glowing eyes."
+  },
+  {
+    "name_ar": "٩٩+",
+    "name_en": "99+",
+    "box_2d": [
+      348,
+      236,
+      501,
+      332
+    ],
+    "description": "Yellow box with a cartoon detective character and Arabic numerals ٩٩+."
+  },
+  {
+    "name_ar": "كارتافلام",
+    "name_en": "Karataflam",
+    "box_2d": [
+      351,
+      334,
+      501,
+      390
+    ],
+    "description": "White box with 'Karataflam' written in green text."
+  },
+  {
+    "name_ar": "مين مينز",
+    "name_en": "Min Minz",
+    "box_2d": [
+      351,
+      395,
+      498,
+      449
+    ],
+    "description": "White box with caricatures of men in suits."
+  },
+  {
+    "name_ar": "مزعاج ومشاعره ولا عليه؟",
+    "name_en": "Maza'ag w Masha'ero wala 3aleh?",
+    "box_2d": [
+      348,
+      454,
+      498,
+      510
+    ],
+    "description": "White box with an angry cat cartoon."
+  },
+  {
+    "name_ar": "صحصح",
+    "name_en": "Sahseh",
+    "box_2d": [
+      348,
+      515,
+      494,
+      566
+    ],
+    "description": "Orange box with a cartoon character with large eyes."
+  },
+  {
+    "name_ar": "تعرفها ولا لأ",
+    "name_en": "Ta'refha wala la'",
+    "box_2d": [
+      345,
+      571,
+      494,
+      625
+    ],
+    "description": "Orange and yellow box with a stylized face graphic."
+  },
+  {
+    "name_ar": "رزع الجمهور",
+    "name_en": "Raz3 El Gomhoor",
+    "box_2d": [
+      338,
+      627,
+      494,
+      678
+    ],
+    "description": "Brown box with a cartoon audience graphic. 'رزع الجمهور' on the front."
+  },
+  {
+    "name_ar": "ضحكة",
+    "name_en": "Dahka",
+    "box_2d": [
+      345,
+      683,
+      494,
+      747
+    ],
+    "description": "Blue box with a pattern of white hearts."
+  },
+  {
+    "name_ar": "مين تاني؟",
+    "name_en": "Min Tani?",
+    "box_2d": [
+      345,
+      749,
+      494,
+      800
+    ],
+    "description": "Blue box with a large white question mark."
+  },
+  {
+    "name_ar": "سلسلة بطاقات المعرفة",
+    "name_en": "Mawsoo3at Al Ma3refa",
+    "box_2d": [
+      524,
+      0,
+      680,
+      97
+    ],
+    "description": "Yellow box, partially open, with a baby graphic. 'سلسلة بطاقات المعرفة' on the box face."
+  },
+  {
+    "name_ar": "عرفت مين",
+    "name_en": "3erfet Meen",
+    "box_2d": [
+      524,
+      107,
+      677,
+      195
+    ],
+    "description": "Orange box with stylized hands forming V-shapes."
+  },
+  {
+    "name_ar": "TALZAD",
+    "name_en": "TALZAD",
+    "box_2d": [
+      524,
+      200,
+      677,
+      275
+    ],
+    "description": "Red box with an explosion graphic and 'TALZAD' in white text."
+  },
+  {
+    "name_ar": "لو",
+    "name_en": "Law",
+    "box_2d": [
+      524,
+      280,
+      677,
+      356
+    ],
+    "description": "Blue box with a white question mark inside a cloud graphic."
+  },
+  {
+    "name_ar": "أصحاب ولا؟ فلسفة",
+    "name_en": "As7ab Wala? Falsafa",
+    "box_2d": [
+      520,
+      361,
+      677,
+      434
+    ],
+    "description": "Red and yellow box with speech bubbles."
+  },
+  {
+    "name_ar": "TOPIC",
+    "name_en": "TOPIC (Over Think)",
+    "box_2d": [
+      517,
+      437,
+      677,
+      527
+    ],
+    "description": "Black box with a golden lock graphic and 'TOPIC' in English."
+  },
+  {
+    "name_ar": "توبيك",
+    "name_en": "Topic",
+    "box_2d": [
+      514,
+      530,
+      677,
+      588
+    ],
+    "description": "White box with an orange circular arrow graphic and 'توبيك' (Topic) in Arabic."
+  },
+  {
+    "name_ar": "كارتافلام",
+    "name_en": "Karataflam",
+    "box_2d": [
+      514,
+      590,
+      677,
+      654
+    ],
+    "description": "White box with a stylized eye graphic in red and green."
+  },
+  {
+    "name_ar": "لا تتكلم",
+    "name_en": "La Tatakallam",
+    "box_2d": [
+      511,
+      656,
+      677,
+      720
+    ],
+    "description": "Light blue/green box with a red stop sign over a mouth."
+  },
+  {
+    "name_ar": "عروستي",
+    "name_en": "3arosty",
+    "box_2d": [
+      511,
+      722,
+      677,
+      781
+    ],
+    "description": "White box with pink/purple stylized Arabic calligraphy for 'عروستي'."
+  },
+  {
+    "name_ar": "عطلان",
+    "name_en": "3atlan",
+    "box_2d": [
+      507,
+      783,
+      677,
+      844
+    ],
+    "description": "Blue box with white and yellow stars."
+  }
+]
