@@ -27,6 +27,7 @@ Thumbs.db
 downloads_official/
 scratch/
 public/games/backup/
+public/games/official_raw/
 scripts/__pycache__/
 *.pyc
 audit_images_visual.py
