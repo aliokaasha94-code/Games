@@ -6,9 +6,30 @@
     <link rel="manifest" href="/manifest.json" />
     <link rel="apple-touch-icon" href="/logo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>ألعاب كافيه ومحمصة عماد أفندي ☕👑</title>
     <meta name="description" content="ألعاب كافيه ومحمصة عماد أفندي بكفر الشيخ" />
     <meta name="theme-color" content="#0B0B0C" />
+
+    <!-- Instant Cache Buster: Unregisters stale SW and deletes old caches immediately -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for (var i = 0; i < registrations.length; i++) {
+            registrations[i].unregister();
+          }
+        });
+      }
+      if ('caches' in window) {
+        caches.keys().then(function(keys) {
+          keys.forEach(function(key) {
+            caches.delete(key);
+          });
+        });
+      }
+    </script>
 
     <!-- Preconnect & Asynchronous Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
