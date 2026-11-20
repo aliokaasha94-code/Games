@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Flame, Users, X } from 'lucide-react';
+import { Search, Users, X } from 'lucide-react';
 
 interface HeroProps {
   searchQuery: string;
@@ -14,66 +14,46 @@ export const Hero: React.FC<HeroProps> = ({
   onSearchChange,
   selectedPlayerCount,
   onPlayerCountSelect,
-  totalGames,
 }) => {
   const playerPresets = [
     { label: 'الكل', value: null },
-    { label: '2 لاعبين (كابلز)', value: 2 },
-    { label: '3 - 4 أفراد', value: 4 },
-    { label: '5 - 6 أفراد', value: 6 },
-    { label: 'شلة كبيرة (8+)', value: 8 },
+    { label: '٢ لاعبين', value: 2 },
+    { label: '٣ - ٤ أفراد', value: 4 },
+    { label: '٥ - ٦ أفراد', value: 6 },
+    { label: 'شلة ٨+', value: 8 },
   ];
 
   return (
-    <section className="relative overflow-hidden pt-8 pb-6 px-4 sm:px-6 lg:px-8 border-b border-gold/15">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[radial-gradient(circle,rgba(212,175,55,0.15)_0%,transparent_70%)] rounded-full blur-[100px] pointer-events-none -z-10"></div>
-
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="relative px-3 sm:px-6 pt-3 pb-2.5 bg-[#0D0A08]/40 border-b border-gold/15">
+      <div className="max-w-4xl mx-auto flex flex-col gap-2.5">
         
-        {/* Banner Tag */}
-        <div className="inline-flex items-center gap-2 bg-[#14100D] border border-gold/30 px-3.5 py-1.5 rounded-full mb-4 shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-          <Flame className="w-4 h-4 text-amber-400 fill-amber-400 animate-pulse" />
-          <span className="text-xs sm:text-sm font-medium text-gold-light">
-            سهرتك في عماد أفندي متتنسيش • {totalGames} لعبة أصلية على طاولتك
-          </span>
-        </div>
-
-        {/* Headline */}
-        <h2 className="text-2xl sm:text-4xl font-extrabold font-kufi text-white tracking-tight mb-3">
-          مش عارفين تلعبوا إيه؟ <span className="text-gold">اختاروا اللعبة المناسبة لقعدتكم!</span>
-        </h2>
-        <p className="text-xs sm:text-sm text-neutral-300 max-w-2xl mx-auto mb-6 font-light leading-relaxed">
-          تصفح الألعاب، اعرف القوانين خطوة بخطوة، أو اطلب من كابتن الألعاب الذكي يرشح لك اللعبة المثالية على طاولتك.
-        </p>
-
-        {/* Instant Search Bar */}
-        <div className="relative max-w-xl mx-auto mb-5">
-          <div className="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
-            <Search className="w-5 h-5 text-gold/70" />
+        {/* Compact Search Bar */}
+        <div className="relative w-full">
+          <div className="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none">
+            <Search className="w-4 h-4 text-gold/70" />
           </div>
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="ابحث باسم اللعبة، التصنيف (ضحك، سينما، كورة)، أو عدد اللعيبة..."
-            className="w-full pl-10 pr-12 py-3.5 bg-[#14100D]/90 border border-gold/30 focus:border-gold rounded-2xl text-sm sm:text-base text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-gold/30 transition-all shadow-inner"
+            placeholder="ابحث عن لعبة (مثلاً: ضحك، شلة، كابلز)..."
+            className="w-full pl-9 pr-10 py-2 sm:py-2.5 bg-[#14100D] border border-gold/25 focus:border-gold rounded-xl text-xs sm:text-sm text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-gold/30 transition-all shadow-inner"
           />
           {searchQuery && (
             <button
               onClick={() => onSearchChange('')}
               className="absolute inset-y-0 left-0 pl-3 flex items-center text-neutral-400 hover:text-white"
             >
-              <X className="w-4 h-4" />
+              <X className="w-3.5 h-3.5" />
             </button>
           )}
         </div>
 
-        {/* Player Count Quick Selector */}
-        <div className="flex items-center justify-center flex-wrap gap-2 pt-1">
-          <span className="text-xs text-neutral-400 flex items-center gap-1 font-medium ml-1">
-            <Users className="w-3.5 h-3.5 text-gold" />
-            عدد أفراد الطاولة:
+        {/* Player Count Chips (Horizontally Scrollable on Mobile) */}
+        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+          <span className="text-[11px] text-neutral-400 flex items-center gap-1 font-medium ml-1 whitespace-nowrap">
+            <Users className="w-3 h-3 text-gold" />
+            اللعيبة:
           </span>
           {playerPresets.map((preset) => {
             const isSelected = selectedPlayerCount === preset.value;
@@ -81,10 +61,10 @@ export const Hero: React.FC<HeroProps> = ({
               <button
                 key={preset.label}
                 onClick={() => onPlayerCountSelect(isSelected && preset.value !== null ? null : preset.value)}
-                className={`text-xs px-3.5 py-1.5 rounded-full border transition-all active:scale-95 duration-200 ${
+                className={`text-[11px] sm:text-xs px-2.5 py-1 rounded-lg border whitespace-nowrap transition-all active:scale-95 duration-150 ${
                   isSelected
-                    ? 'bg-gradient-to-r from-gold to-gold-dark text-[#0B0806] border-gold font-bold shadow-[0_2px_12px_rgba(212,175,55,0.35)]'
-                    : 'bg-[#14100D] text-neutral-300 border-gold/20 hover:border-gold/50 hover:text-white'
+                    ? 'bg-gradient-to-r from-gold to-gold-dark text-[#0B0806] border-gold font-bold shadow-[0_2px_8px_rgba(212,175,55,0.3)]'
+                    : 'bg-[#14100D] text-neutral-300 border-gold/15 hover:border-gold/40 hover:text-white'
                 }`}
               >
                 {preset.label}

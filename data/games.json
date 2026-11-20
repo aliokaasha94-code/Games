@@ -9,67 +9,67 @@
     {
       "id": "all",
       "name_ar": "الكل",
-      "icon": "/categories-3d/all.png",
+      "icon": "/categories-3d/all.webp",
       "desc": "جميع ألعاب الكافيه المتاحة"
     },
     {
       "id": "comedy",
       "name_ar": "ضحك",
-      "icon": "/categories-3d/comedy.png",
+      "icon": "/categories-3d/comedy.webp",
       "desc": "ألعاب كسر الملل والتوريط والضحك العالي"
     },
     {
       "id": "bluffing",
       "name_ar": "بلوف وتمثيل",
-      "icon": "/categories-3d/bluffing.png",
+      "icon": "/categories-3d/bluffing.webp",
       "desc": "استنتاج، تمثيل، وكشف الكدابين في القعدة"
     },
     {
       "id": "cinema",
       "name_ar": "سينما",
-      "icon": "/categories-3d/cinema.png",
+      "icon": "/categories-3d/cinema.webp",
       "desc": "أفلام ومسرحيات وإيفيهات مصرية كلاسيك"
     },
     {
       "id": "football",
       "name_ar": "كورة",
-      "icon": "/categories-3d/football.png",
+      "icon": "/categories-3d/football.webp",
       "desc": "تحديات كروية وأسئلة تاريخية وجدال كروي"
     },
     {
       "id": "couples",
       "name_ar": "كابلز",
-      "icon": "/categories-3d/couples.png",
+      "icon": "/categories-3d/couples.webp",
       "desc": "حوارات عميقة وتوافق للكابلز والمخطوبين"
     },
     {
       "id": "girls",
       "name_ar": "بنات",
-      "icon": "/categories-3d/girls.png",
+      "icon": "/categories-3d/girls.webp",
       "desc": "جلسات بنات وأسرار وسوالف بدون فلاتر"
     },
     {
       "id": "mystery",
       "name_ar": "تحقيقات",
-      "icon": "/categories-3d/mystery.png",
+      "icon": "/categories-3d/mystery.webp",
       "desc": "ملفات قضايا وألغاز ذكاء عميقة"
     },
     {
       "id": "strategy",
       "name_ar": "ذكاء وتخطيط",
-      "icon": "/categories-3d/strategy.png",
+      "icon": "/categories-3d/strategy.webp",
       "desc": "بزنس، تداول، وألعاب استراتيجية وبناء"
     },
     {
       "id": "quick",
       "name_ar": "سريعة وتسالي",
-      "icon": "/categories-3d/quick.png",
+      "icon": "/categories-3d/quick.webp",
       "desc": "ألعاب جيب خاطفة ومسابقات سريعة"
     },
     {
       "id": "classic",
       "name_ar": "كلاسيك",
-      "icon": "/categories-3d/classic.png",
+      "icon": "/categories-3d/classic.webp",
       "desc": "شطرنج، دومينو أصلي، ومسابقات ثقافية"
     }
   ],

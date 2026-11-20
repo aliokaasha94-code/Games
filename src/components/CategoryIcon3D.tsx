@@ -7,17 +7,17 @@ interface CategoryIcon3DProps {
 }
 
 export const CATEGORY_3D_ASSETS: Record<string, string> = {
-  all: '/categories-3d/all.png',
-  comedy: '/categories-3d/comedy.png',
-  bluffing: '/categories-3d/bluffing.png',
-  cinema: '/categories-3d/cinema.png',
-  football: '/categories-3d/football.png',
-  couples: '/categories-3d/couples.png',
-  girls: '/categories-3d/girls.png',
-  mystery: '/categories-3d/mystery.png',
-  strategy: '/categories-3d/strategy.png',
-  quick: '/categories-3d/quick.png',
-  classic: '/categories-3d/classic.png',
+  all: '/categories-3d/all.webp',
+  comedy: '/categories-3d/comedy.webp',
+  bluffing: '/categories-3d/bluffing.webp',
+  cinema: '/categories-3d/cinema.webp',
+  football: '/categories-3d/football.webp',
+  couples: '/categories-3d/couples.webp',
+  girls: '/categories-3d/girls.webp',
+  mystery: '/categories-3d/mystery.webp',
+  strategy: '/categories-3d/strategy.webp',
+  quick: '/categories-3d/quick.webp',
+  classic: '/categories-3d/classic.webp',
 };
 
 export const CategoryIcon3D: React.FC<CategoryIcon3DProps> = ({
@@ -31,9 +31,12 @@ export const CategoryIcon3D: React.FC<CategoryIcon3DProps> = ({
     <img
       src={iconSrc}
       alt={alt}
-      loading="eager"
+      loading="lazy"
+      decoding="async"
+      width={24}
+      height={24}
       draggable={false}
-      className={`inline-block drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] select-none pointer-events-none transition-transform duration-200 ${className}`}
+      className={`inline-block select-none pointer-events-none transition-transform duration-200 ${className}`}
     />
   );
 };

@@ -1,65 +1,9 @@
-// ☕ كافيه ومحمصة عماد أفندي - Service Worker Offline Engine
-// Generated automatically by sync_game_assets.py
-const CACHE_NAME = 'emad-afandi-v202611181648';
-const ASSETS_TO_CACHE = [
-  "/",
-  "/index.html",
-  "/logo.webp",
-  "/data/games.json",
-  "/games/mesh-mertahlak.webp",
-  "/games/el-joker.webp",
-  "/games/kadab.webp",
-  "/games/met7awech.webp",
-  "/games/msh-hanbatel.webp",
-  "/games/wala3a.webp",
-  "/games/est7ala.webp",
-  "/games/byegy-menno.webp",
-  "/games/ana-mesh-arafny.webp",
-  "/games/shake-me.webp",
-  "/games/el-le3ba-el-qadya.webp",
-  "/games/tala3-el-mostakhabby.webp",
-  "/games/ew3a-weshak.webp",
-  "/games/hareedy.webp",
-  "/games/el-3awz.webp",
-  "/games/2ool-aw-e3mel.webp",
-  "/games/2oolameme-2.webp",
-  "/games/casino-al3ab.webp",
-  "/games/kataflam.webp",
-  "/games/tasali-cinema.webp",
-  "/games/raz3-el-gomhoor.webp",
-  "/games/couples-walaken.webp",
-  "/games/mawada-w-rahma.webp",
-  "/games/qabl-el-hewar.webp",
-  "/games/pick-a-date.webp",
-  "/games/girls-walaken.webp",
-  "/games/waraa-el-gareema.webp",
-  "/games/khufu.webp",
-  "/games/mansa.webp",
-  "/games/kelmet-el-ser-mostathmer.webp",
-  "/games/tomouhy.webp",
-  "/games/skrew.webp",
-  "/games/autobeez.webp",
-  "/games/sahseh.webp",
-  "/games/3arosty.webp",
-  "/games/tasali-kelma-khatar.webp",
-  "/games/tasali-3andalib.webp",
-  "/games/tasali-haqeeqa.webp",
-  "/games/tasali-system.webp",
-  "/games/tasali-dehk.webp",
-  "/games/tasali-ramadan.webp",
-  "/games/starting-chess.webp",
-  "/games/original-domino.webp",
-  "/games/mawsoo3at.webp"
-];
+// ☕ كافيه ومحمصة عماد أفندي - Service Worker Network-First Engine
+// Version: 2026-11-20-v2-3d-icons
+const CACHE_NAME = 'emad-afandi-v20261120-3d';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Service Worker] Caching all game assets for offline cafe experience...');
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
-  );
 });
 
 self.addEventListener('activate', (event) => {
@@ -67,38 +11,50 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((keyList) => {
       return Promise.all(
         keyList.map((key) => {
-          if (key !== CACHE_NAME) {
-            console.log('[Service Worker] Removing old cache:', key);
-            return caches.delete(key);
-          }
+          console.log('[Service Worker] Purging old cache:', key);
+          return caches.delete(key);
         })
       );
     }).then(() => self.clients.claim())
   );
 });
 
+// Network-first strategy: Always fetch fresh HTML & code, fallback to cache only when offline
 self.addEventListener('fetch', (event) => {
+  // Only handle GET requests
+  if (event.request.method !== 'GET') return;
+
+  const url = new URL(event.request.url);
+
+  // For HTML navigations, ALWAYS network-first
+  if (event.request.mode === 'navigate' || url.pathname === '/' || url.pathname === '/index.html') {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          return caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          });
+        })
+        .catch(() => {
+          return caches.match(event.request).then((cached) => cached || caches.match('/index.html'));
+        })
+    );
+    return;
+  }
+
+  // For static assets (/assets/, /games/, /categories-3d/): Network-first with cache fallback
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request).then((networkResponse) => {
-        if (
-          !networkResponse ||
-          networkResponse.status !== 200 ||
-          networkResponse.type !== 'basic'
-        ) {
-          return networkResponse;
+    fetch(event.request)
+      .then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200) {
+          const resClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, resClone);
+          });
         }
-        const responseToCache = networkResponse.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
-        });
         return networkResponse;
-      }).catch(() => {
-        return caches.match('/index.html');
-      });
-    })
+      })
+      .catch(() => caches.match(event.request))
   );
 });
