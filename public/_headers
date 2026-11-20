@@ -1,0 +1,20 @@
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/games/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/categories-3d/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/logo.webp
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400

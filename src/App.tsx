@@ -1,14 +1,22 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef, Suspense, lazy } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { CategoryFilter } from './components/CategoryFilter';
 import { GameCard } from './components/GameCard';
-import { GameDetailModal } from './components/GameDetailModal';
-import { AIChatConcierge } from './components/AIChatConcierge';
 import { Footer } from './components/Footer';
 import { gamesData, categoriesData } from './data/games';
 import { Game } from './types';
 import { Sparkles, Frown, RotateCcw } from 'lucide-react';
+
+// Code-split modals so the initial payload is ultra-light
+const GameDetailModal = lazy(() =>
+  import('./components/GameDetailModal').then((m) => ({ default: m.GameDetailModal }))
+);
+const AIChatConcierge = lazy(() =>
+  import('./components/AIChatConcierge').then((m) => ({ default: m.AIChatConcierge }))
+);
+
+const INITIAL_BATCH_SIZE = 12;
 
 export const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -16,6 +24,9 @@ export const App: React.FC = () => {
   const [selectedPlayerCount, setSelectedPlayerCount] = useState<number | null>(null);
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [isAIChatOpen, setIsAIChatOpen] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(INITIAL_BATCH_SIZE);
+
+  const sentinelRef = useRef<HTMLDivElement>(null);
 
   // Filter games based on category, search query, and player count
   const filteredGames = useMemo(() => {
@@ -28,16 +39,12 @@ export const App: React.FC = () => {
       // 2. Player count filter (Smart Range inclusive)
       if (selectedPlayerCount !== null) {
         if (selectedPlayerCount === 8) {
-          // Large party 8+
           if (game.max_players < 8) return false;
         } else if (selectedPlayerCount === 2) {
-          // 2 players
           if (game.min_players > 2 || game.max_players < 2) return false;
         } else if (selectedPlayerCount === 4) {
-          // Range 3 - 4 players
           if (game.max_players < 3 || game.min_players > 4) return false;
         } else if (selectedPlayerCount === 6) {
-          // Range 5 - 6 players
           if (game.max_players < 5 || game.min_players > 6) return false;
         }
       }
@@ -60,6 +67,36 @@ export const App: React.FC = () => {
       return true;
     });
   }, [searchQuery, selectedCategory, selectedPlayerCount]);
+
+  // Reset pagination batch when filters change
+  useEffect(() => {
+    setVisibleCount(INITIAL_BATCH_SIZE);
+  }, [searchQuery, selectedCategory, selectedPlayerCount]);
+
+  // Progressive slicing: show full list for small search/filters, or batch for browse
+  const displayedGames = useMemo(() => {
+    if (searchQuery.trim() !== '' || (selectedCategory !== 'all' && filteredGames.length <= INITIAL_BATCH_SIZE)) {
+      return filteredGames;
+    }
+    return filteredGames.slice(0, visibleCount);
+  }, [filteredGames, visibleCount, searchQuery, selectedCategory]);
+
+  // Auto-load next batch on scroll using IntersectionObserver
+  useEffect(() => {
+    if (!sentinelRef.current || displayedGames.length >= filteredGames.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => Math.min(prev + INITIAL_BATCH_SIZE, filteredGames.length));
+        }
+      },
+      { rootMargin: '300px' }
+    );
+
+    observer.observe(sentinelRef.current);
+    return () => observer.disconnect();
+  }, [displayedGames.length, filteredGames.length]);
 
   const handleResetFilters = () => {
     setSearchQuery('');
@@ -118,16 +155,30 @@ export const App: React.FC = () => {
         </div>
 
         {/* 2-Column Mobile-First Games Grid */}
-        {filteredGames.length > 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
-            {filteredGames.map((game) => (
-              <GameCard
-                key={game.id}
-                game={game}
-                onSelect={setSelectedGame}
-              />
-            ))}
-          </div>
+        {displayedGames.length > 0 ? (
+          <>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
+              {displayedGames.map((game) => (
+                <GameCard
+                  key={game.id}
+                  game={game}
+                  onSelect={setSelectedGame}
+                />
+              ))}
+            </div>
+
+            {/* Scroll Sentinel for Smooth Infinite Progression */}
+            {displayedGames.length < filteredGames.length && (
+              <div ref={sentinelRef} className="flex justify-center mt-6 mb-4">
+                <button
+                  onClick={() => setVisibleCount((prev) => Math.min(prev + INITIAL_BATCH_SIZE, filteredGames.length))}
+                  className="px-5 py-2 rounded-full bg-[#14100D] hover:bg-[#1A1410] text-gold border border-gold/30 hover:border-gold/60 text-xs font-bold transition-all active:scale-95 shadow-sm"
+                >
+                  عرض باقي الألعاب ({filteredGames.length - displayedGames.length} لعبة متبقية)
+                </button>
+              </div>
+            )}
+          </>
         ) : (
           <div className="py-16 text-center flex flex-col items-center justify-center">
             <Frown className="w-10 h-10 text-gold/40 mb-2.5" />
@@ -161,21 +212,29 @@ export const App: React.FC = () => {
         </button>
       </div>
 
-      {/* Game Details Bottom Sheet / Modal */}
-      <GameDetailModal
-        game={selectedGame}
-        onClose={() => setSelectedGame(null)}
-      />
+      {/* Lazy-loaded Game Details Modal */}
+      {selectedGame && (
+        <Suspense fallback={null}>
+          <GameDetailModal
+            game={selectedGame}
+            onClose={() => setSelectedGame(null)}
+          />
+        </Suspense>
+      )}
 
-      {/* AI Concierge Drawer */}
-      <AIChatConcierge
-        isOpen={isAIChatOpen}
-        onClose={() => setIsAIChatOpen(false)}
-        games={gamesData}
-        onSelectGame={(game) => {
-          setSelectedGame(game);
-        }}
-      />
+      {/* Lazy-loaded AI Concierge Drawer */}
+      {isAIChatOpen && (
+        <Suspense fallback={null}>
+          <AIChatConcierge
+            isOpen={isAIChatOpen}
+            onClose={() => setIsAIChatOpen(false)}
+            games={gamesData}
+            onSelectGame={(game) => {
+              setSelectedGame(game);
+            }}
+          />
+        </Suspense>
+      )}
 
       {/* Footer */}
       <Footer />
