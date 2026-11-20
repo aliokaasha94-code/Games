@@ -26,6 +26,9 @@ Thumbs.db
 # Scratch and temp download dumps
 downloads_official/
 scratch/
+public/games/backup/
+scripts/__pycache__/
+*.pyc
 audit_images_visual.py
 check_mansa_net.py
 download_real_mansa.py

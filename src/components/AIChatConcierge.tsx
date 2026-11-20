@@ -28,13 +28,13 @@ export const AIChatConcierge: React.FC<AIChatConciergeProps> = ({
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const quickPrompts = [
-    'إحنا 4 شباب وعايزين ضحك ومقالب 😂',
-    'شلة وعايزين نضحك مع إياد الموجي 🎬',
-    'إحنا كابلز ومقبلين على الجواز وعايزين لعبة رايقة ❤️',
-    'قعدة بنات وعايزين أسرار وسوالف 👑',
-    'شلة كروية وأهلي وزمالك ⚽',
-    'عايزين لعبة بزنس وتجارة وذهب زي مانسا 📈',
-    'عايزين دور شطرنج أو دومينو قهاوي رايق ♟️',
+    'إحنا 4 شباب وعايزين لعبة ضحك',
+    'شلة وعايزين نضحك مع إياد الموجي',
+    'إحنا كابلز ومقبلين على الجواز وعايزين لعبة رايقة',
+    'قعدة بنات وعايزين أسرار وسوالف',
+    'شلة كروية وتحديات كورة',
+    'عايزين لعبة ذكاء وتخطيط وبزنس زي مانسا',
+    'عايزين دور شطرنج أو دومينو كلاسيك رايق',
   ];
 
   useEffect(() => {
@@ -245,11 +245,11 @@ export const AIChatConcierge: React.FC<AIChatConciergeProps> = ({
                     }}
                     className="mt-2.5 w-full max-w-[85%] bg-[#1A1411] border border-gold/40 hover:border-gold rounded-xl p-2.5 flex items-center gap-3 cursor-pointer shadow-gold-glow transition-all active:scale-95 group"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-white p-1 flex-shrink-0 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-b from-[#1C1713] to-[#0D0A08] border border-gold/30 p-1 flex-shrink-0 flex items-center justify-center overflow-hidden">
                       <img
                         src={suggestedGame.image}
                         alt={suggestedGame.name}
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-contain filter drop-shadow"
                       />
                     </div>
                     <div className="flex-1 min-w-0">

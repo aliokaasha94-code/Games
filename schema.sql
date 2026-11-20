@@ -36,18 +36,14 @@ CREATE TABLE games (
 
 -- Insert All 11 Official Categories
 INSERT INTO categories (id, name_ar, icon, desc) VALUES
-('all', 'الكل', '🎲', 'جميع ألعاب الكافيه المتاحة'),
-('comedy', 'ضحك ومقالب', '😂', 'ألعاب كسر الملل والتوريط والضحك العالي'),
-('bluffing', 'شك وبلف', '🕵️', 'استنتاج، تمثيل، وكشف الكدابين في القعدة'),
-('cinema', 'سينما وإيفيهات', '🎬', 'أفلام ومسرحيات وإيفيهات مصرية كلاسيك'),
-('football', 'كورة ورزع', '⚽', 'أهلي وزمالك ورزع كروي تاريخي'),
-('couples', 'كابلز وصراحة', '❤️', 'حوارات عميقة وتوافق للكابلز والمخطوبين'),
-('girls', 'بنات فقط', '👑', 'جلسات بنات وأسرار وسوالف بدون فلاتر'),
-('mystery', 'تحقيقات وجرائم', '🔍', 'ملفات قضايا وألغاز ذكاء عميقة'),
-('strategy', 'استثمار وتخطيط', '📈', 'بزنس، تداول، وألعاب استراتيجية وبناء'),
-('quick', 'كروت وتسالي سريعة', '⚡', 'ألعاب جيب خاطفة من 15-20 دقيقة'),
-('classic', 'كلاسيك ومسابقات', '🏆', 'شطرنج، دومينو أصلي، وموسوعات ثقافية');
-
--- Indices for ultra-fast edge queries
-CREATE INDEX idx_games_category ON games(category);
-CREATE INDEX idx_games_players ON games(min_players, max_players);
+('all', 'الكل', '/categories-3d/all.png', 'جميع ألعاب الكافيه المتاحة'),
+('comedy', 'ضحك', '/categories-3d/comedy.png', 'ألعاب كسر الملل والتوريط والضحك العالي'),
+('bluffing', 'بلوف وتمثيل', '/categories-3d/bluffing.png', 'استنتاج، تمثيل، وكشف الكدابين في القعدة'),
+('cinema', 'سينما', '/categories-3d/cinema.png', 'أفلام ومسرحيات وإيفيهات مصرية كلاسيك'),
+('football', 'كورة', '/categories-3d/football.png', 'تحديات كروية وأسئلة تاريخية وجدال كروي'),
+('couples', 'كابلز', '/categories-3d/couples.png', 'حوارات عميقة وتوافق للكابلز والمخطوبين'),
+('girls', 'بنات', '/categories-3d/girls.png', 'جلسات بنات وأسرار وسوالف بدون فلاتر'),
+('mystery', 'تحقيقات', '/categories-3d/mystery.png', 'ملفات قضايا وألغاز ذكاء عميقة'),
+('strategy', 'ذكاء وتخطيط', '/categories-3d/strategy.png', 'بزنس، تداول، وألعاب استراتيجية وبناء'),
+('quick', 'سريعة وتسالي', '/categories-3d/quick.png', 'ألعاب جيب خاطفة ومسابقات سريعة'),
+('classic', 'كلاسيك', '/categories-3d/classic.png', 'شطرنج، دومينو أصلي، ومسابقات ثقافية');
