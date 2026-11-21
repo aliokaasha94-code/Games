@@ -3,30 +3,44 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 
-// Force Service Worker Update / Clean Cache
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then((registrations) => {
-    for (const registration of registrations) {
-      registration.update();
-    }
-  });
+// Automated Cache Buster & Migration Engine
+const APP_VERSION = 'v2026.11.21-0605-luxury';
+const storedVersion = localStorage.getItem('emad_afandi_version');
 
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').then((reg) => {
-      reg.addEventListener('updatefound', () => {
-        const newWorker = reg.installing;
-        if (newWorker) {
-          newWorker.addEventListener('statechange', () => {
-            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-              // New content available, reload to display latest
-              window.location.reload();
-            }
-          });
-        }
-      });
-    }).catch((err) => {
-      console.log('SW registration error:', err);
+if (storedVersion !== APP_VERSION) {
+  console.log('[App] Upgrading client version to', APP_VERSION);
+  localStorage.setItem('emad_afandi_version', APP_VERSION);
+
+  // Purge legacy caches on client to force immediate fresh assets
+  if ('caches' in window) {
+    caches.keys().then((names) => {
+      names.forEach((name) => caches.delete(name));
     });
+  }
+}
+
+// Service Worker Registration with Immediate Update Trigger
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then((reg) => {
+        reg.update(); // Always check for updated sw on reload
+        reg.addEventListener('updatefound', () => {
+          const newWorker = reg.installing;
+          if (newWorker) {
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                // Instantly activate without waiting
+                window.location.reload();
+              }
+            });
+          }
+        });
+      })
+      .catch((err) => {
+        console.warn('SW registration bypassed:', err);
+      });
   });
 }
 

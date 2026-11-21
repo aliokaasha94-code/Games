@@ -32,10 +32,8 @@ export const CategoryIcon3D: React.FC<CategoryIcon3DProps> = ({
       <img
         src={iconSrc}
         alt={alt}
-        loading="lazy"
+        loading="eager"
         decoding="async"
-        width={24}
-        height={24}
         draggable={false}
         className="w-full h-full object-contain select-none pointer-events-none transition-transform duration-200"
       />

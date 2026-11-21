@@ -1,8 +1,8 @@
-// ☕ كافيه عماد أفندي - Service Worker Network-First Engine
-// Version: 2026-11-20-v2-3d-icons
-const CACHE_NAME = 'emad-afandi-v20261120-3d';
+// ☕ كافيه عماد أفندي - Service Worker Fast Engine
+// Version: 2026-11-21-v4-clean-icons
+const CACHE_NAME = 'emad-afandi-v20261121-clean-icons';
 
-self.addEventListener('install', (event) => {
+self.addEventListener('install', () => {
   self.skipWaiting();
 });
 
@@ -11,47 +11,37 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((keyList) => {
       return Promise.all(
         keyList.map((key) => {
-          console.log('[Service Worker] Purging old cache:', key);
-          return caches.delete(key);
+          if (key !== CACHE_NAME) {
+            console.log('[Service Worker] Purging outdated cache:', key);
+            return caches.delete(key);
+          }
         })
       );
     }).then(() => self.clients.claim())
   );
 });
 
-// Network-first strategy: Always fetch fresh HTML & code, fallback to cache only when offline
+// Always Network-first: Always get fresh assets from network
 self.addEventListener('fetch', (event) => {
-  // Only handle GET requests
   if (event.request.method !== 'GET') return;
-
   const url = new URL(event.request.url);
 
-  // For HTML navigations, ALWAYS network-first
+  // HTML navigation: always network, fallback to cache
   if (event.request.mode === 'navigate' || url.pathname === '/' || url.pathname === '/index.html') {
     event.respondWith(
-      fetch(event.request)
-        .then((networkResponse) => {
-          return caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, networkResponse.clone());
-            return networkResponse;
-          });
-        })
-        .catch(() => {
-          return caches.match(event.request).then((cached) => cached || caches.match('/index.html'));
-        })
+      fetch(event.request, { cache: 'no-cache' })
+        .catch(() => caches.match('/index.html'))
     );
     return;
   }
 
-  // For static assets (/assets/, /games/, /categories-3d/): Network-first with cache fallback
+  // Assets: network first, fallback to cache
   event.respondWith(
     fetch(event.request)
       .then((networkResponse) => {
         if (networkResponse && networkResponse.status === 200) {
           const resClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, resClone);
-          });
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, resClone));
         }
         return networkResponse;
       })

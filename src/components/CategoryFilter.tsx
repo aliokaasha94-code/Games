@@ -14,7 +14,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
   onSelectCategory,
 }) => {
   return (
-    <div className="w-full py-2 sm:py-2.5 overflow-x-auto no-scrollbar border-b border-gold/15 bg-[#0D0A08]/80 backdrop-blur-md sticky top-14 sm:top-20 z-30">
+    <div className="w-full py-2 sm:py-2.5 overflow-x-auto no-scrollbar border-b border-gold/15 bg-[#0D0A08]/85 backdrop-blur-md sticky top-14 sm:top-20 z-30">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 flex items-center gap-2 min-w-max">
         {categories.map((cat) => {
           const isActive = selectedCategory === cat.id;
@@ -30,7 +30,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
             >
               <CategoryIcon3D
                 categoryId={cat.id}
-                className={`w-4 h-4 sm:w-5 sm:h-5 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] transition-transform duration-200 ${
+                className={`w-5 h-5 sm:w-6 sm:h-6 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] transition-transform duration-200 ${
                   isActive ? 'scale-110' : 'group-hover:scale-105'
                 }`}
                 alt={cat.name_ar}
