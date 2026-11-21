@@ -1,10 +1,29 @@
 import os
 import json
 import base64
+from pathlib import Path
 import requests
 
-API_KEY = os.getenv("GEMINI_API_KEY", "")
-url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={API_KEY}"
+# Load GEMINI_API_KEY from repo root .env if not already set in environment
+env_file = Path(__file__).resolve().parent.parent / '.env'
+if env_file.exists():
+    with open(env_file, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                k, v = line.split('=', 1)
+                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
+API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
+if not API_KEY:
+    print("[ERROR] GEMINI_API_KEY is missing. Please create a local .env file with GEMINI_API_KEY=your_key")
+    exit(1)
+
+url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+headers = {
+    "Content-Type": "application/json",
+    "x-goog-api-key": API_KEY
+}
 
 for p in ["WhatsApp Image 2026-11-17 at 12.35.02 AM (1).jpeg", "WhatsApp Image 2026-11-17 at 12.53.12 AM.jpeg"]:
     img_path = os.path.join("Image", p)
@@ -39,7 +58,7 @@ Return a valid JSON array of objects.
         "generationConfig": {"response_mime_type": "application/json"}
     }
     try:
-        resp = requests.post(url, json=payload, timeout=45)
+        resp = requests.post(url, headers=headers, json=payload, timeout=45)
         print("Status:", resp.status_code)
         if resp.status_code == 200:
             parsed = json.loads(resp.json()['candidates'][0]['content']['parts'][0]['text'])
