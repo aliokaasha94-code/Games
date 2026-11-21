@@ -1,4 +1,4 @@
-// ☕ كافيه ومحمصة عماد أفندي - Service Worker Network-First Engine
+// ☕ كافيه عماد أفندي - Service Worker Network-First Engine
 // Version: 2026-11-20-v2-3d-icons
 const CACHE_NAME = 'emad-afandi-v20261120-3d';
 

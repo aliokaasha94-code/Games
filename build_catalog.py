@@ -917,7 +917,7 @@ categories = [
 ]
 
 data = {
-    "cafe_name": "كافيه ومحمصة عماد أفندي",
+    "cafe_name": "كافيه عماد أفندي",
     "cafe_name_en": "Emad Afandi Cafe & Roastery",
     "location": "كفر الشيخ، مصر",
     "phone": "+201034031919",

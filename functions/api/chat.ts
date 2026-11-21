@@ -45,7 +45,7 @@ export const onRequestPost = async (context: { env: Env; request: Request }) => 
     // Call Google Gemini API with header-based authorization (No key leaked in URL!)
     const geminiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
-    const systemInstruction = `أنت 'كابتن الألعاب الذكي' في 'كافيه ومحمصة عماد أفندي' (Emad Afandi Cafe & Roastery) في كفر الشيخ، مصر.
+    const systemInstruction = `أنت 'كابتن الألعاب الذكي' في 'كافيه عماد أفندي' (Emad Afandi Cafe) في كفر الشيخ، مصر.
 أسلوبك مصري كفر الشيخوي جدع، راقي، ودمه خفيف ("يا سيدي الناس"، "يا باشا"، "منور عماد أفندي").
 
 الكافيه يمتلك 44 لعبة حقيقية معتمدة على الرف، مقسمة كالتالي:

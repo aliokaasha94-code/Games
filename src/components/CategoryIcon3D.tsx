@@ -22,21 +22,23 @@ export const CATEGORY_3D_ASSETS: Record<string, string> = {
 
 export const CategoryIcon3D: React.FC<CategoryIcon3DProps> = ({
   categoryId,
-  className = 'w-5 h-5 object-contain',
+  className = 'w-5 h-5',
   alt = '',
 }) => {
   const iconSrc = CATEGORY_3D_ASSETS[categoryId] || CATEGORY_3D_ASSETS.all;
 
   return (
-    <img
-      src={iconSrc}
-      alt={alt}
-      loading="lazy"
-      decoding="async"
-      width={24}
-      height={24}
-      draggable={false}
-      className={`inline-block select-none pointer-events-none transition-transform duration-200 ${className}`}
-    />
+    <span className={`relative inline-flex items-center justify-center flex-shrink-0 ${className}`}>
+      <img
+        src={iconSrc}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        width={24}
+        height={24}
+        draggable={false}
+        className="w-full h-full object-contain select-none pointer-events-none transition-transform duration-200"
+      />
+    </span>
   );
 };

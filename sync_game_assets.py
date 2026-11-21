@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 =============================================================================
-☕ كافيه ومحمصة عماد أفندي (Emad Afandi Cafe & Roastery) - كفر الشيخ 👑
+☕ كافيه عماد أفندي (Emad Afandi Cafe) - كفر الشيخ 👑
 Asset Synchronization & Health Pipeline: sync_game_assets.py
 -----------------------------------------------------------------------------
 1. فحص مسارات الصور في data/games.json والتأكد من مطابقتها لنسبة 1:1 وصيغة WebP.
@@ -73,7 +73,7 @@ def generate_service_worker(cacheable_assets: list, sw_path: Path):
     cache_version = f"emad-afandi-v{datetime.now().strftime('%Y%m%d%H%M')}"
     assets_js_array = json.dumps(cacheable_assets, indent=2, ensure_ascii=False)
     
-    sw_content = f"""// ☕ كافيه ومحمصة عماد أفندي - Service Worker Offline Engine
+    sw_content = f"""// ☕ كافيه عماد أفندي - Service Worker Offline Engine
 // Generated automatically by sync_game_assets.py
 const CACHE_NAME = '{cache_version}';
 const ASSETS_TO_CACHE = {assets_js_array};
@@ -254,7 +254,7 @@ def main():
     all_under_100kb = all(g.get("under_100kb", False) for g in games_health if g.get("file_exists"))
 
     report = {
-        "project": "كافيه ومحمصة عماد أفندي - Emad Afandi Games Hub",
+        "project": "كافيه عماد أفندي - Emad Afandi Games Hub",
         "generated_at": datetime.now().isoformat(),
         "total_games": total_games,
         "verified_images_count": verified_images,

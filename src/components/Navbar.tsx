@@ -17,7 +17,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAIChat }) => {
             <div className="absolute -inset-1 bg-gradient-to-r from-gold to-gold-dark rounded-full blur opacity-30 group-hover:opacity-75 transition duration-300"></div>
             <img 
               src="/logo.webp" 
-              alt="كافيه ومحمصة عماد أفندي" 
+              alt="كافيه عماد أفندي" 
               className="relative h-9 sm:h-11 w-auto object-contain drop-shadow-[0_2px_8px_rgba(212,175,55,0.4)]"
             />
           </div>
